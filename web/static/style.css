@@ -1,0 +1,162 @@
+@import url(https://fonts.googleapis.com/css?family=Didact+Gothic|Comfortaa:400,700&subset=latin,cyrillic);
+
+
+h1,h2,h3{
+    font-family: 'Comfortaa', cursive;
+}
+h3{
+    text-transform: uppercase;
+}
+
+body,logout-link{
+    font-family: 'Didact Gothic', sans-serif;
+    text-align: center;
+    background-image: linear-gradient( 135deg, #2AFADF 10%, #4C83FF 100%);
+    background-size: cover;
+}
+
+a {
+    color: #000;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  a:hover {
+    color: #f00;
+  }
+  
+
+
+.blike{ 
+    /* display: flex; */
+    margin-left: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.cont-like{
+    display: flex;
+    align-content: flex-end;
+    justify-content: center;
+    flex-direction: row;
+    
+}
+a{
+    text-decoration: none;
+}
+
+.header-conteine{
+    width: 1280px;
+    
+}
+.main-nav{
+    margin: 40px auto;
+    padding: 40px auto;
+    margin: 15px auto;
+    padding: 15px auto;
+    display: inline;
+    text-align:center;
+}
+
+main{
+    text-align: center;
+}
+
+header{
+    background: rgb(4,36,0);
+    background: linear-gradient(90deg, rgba(4,36,0,1) 0%, rgba(98,98,221,1) 34%, rgba(0,255,102,1) 100%);
+}
+
+.Posts {
+    border:2px solid rgb(242, 237, 229);
+    border-radius: 1%;
+    margin: 0 auto; /* Центрирует блок по горизонтали */
+    max-width: 480px; /* Устанавливает максимальную ширину блока */
+    background-image: linear-gradient( 135deg, #FFA8A8 10%, #FCFF00 100%);
+    margin-top: 10px;
+  }
+
+  .Posts-comment{
+    border:2px solid rgb(242, 237, 229);
+    border-radius: 1%;
+    margin: 0 auto; /* Центрирует блок по горизонтали */
+    max-width: 480px; /* Устанавливает максимальную ширину блока */
+    background: linear-gradient(to right, rgb(0, 57, 115), rgb(229, 229, 190));
+
+    margin-top: 20px;
+  }
+.content{
+    text-align: center;
+    
+}
+
+.post-content{
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+  
+
+button{
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    background-size: 100% auto;
+    color: #bb6161;
+    border-radius: 5px;
+}
+button:hover,
+button:focus,
+button:active {
+    background-color: #4C83FF;
+  /* Стили при наведении, фокусе и нажатии на кнопку */
+}
+
+.button-container {
+    text-align: center;
+  }
+
+.main-conteiner {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    justify-content: center;
+}
+  
+.category {
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.category form,
+.category button {
+    margin: 0 5px;
+    margin-bottom: 5px;
+  }
+
+.sign-in{
+    margin-top: 10px;
+}
+.category-create-post{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        align-items: baseline;
+    
+}
+
+.create-form{
+    margin-top: 10px;
+    text-align: center;
+}
+  @media only screen and (max-width: 768px) {
+    .category form,
+    .category button {
+      width: 100%;
+    }
+  }
+  

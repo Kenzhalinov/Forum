@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Forum</title>
+</head>
+<body>
+    <header>
+    <h2><a href="/">Home</a></h2>
+    <h3><a href="/post/create">Create-post</a></h3>
+    </header>
+    <main>
+    <h3>Post</h3>
+ 
+    <div class="Posts">
+        <div class="post-content">
+            <div class="content">
+                <p><i>Author:</i> {{.Post.User}}</p>
+                <h3>{{ .Post.Title }}</h3>
+                <p>{{ .Post.Content }}</p>
+            </div>
+        </div>
+    </div>
+   
+    <p>Оставь комментарий</p>
+    <form action="/post/comment" method="post">
+        <input type="hidden" name="post_id" value="{{.Post.ID}}">
+        <input type="hidden" name="return_path" value="/post?id={{.Post.ID}}">
+        <textarea name="content" rows="4" cols="50"></textarea><br>
+        <button type="submit">Отправить</button>
+    </form>
+
+    {{range .Comments}}
+    <div class="Posts-comment">
+        <div class="post-content">
+            <div class="content">
+                <p><i>Author:</i>{{.User}}</p>
+                <p>{{.Content}}</p>
+                <form action="/comment/vote" method="post">
+                    <input type="hidden" name="return_path" value="/post?id={{.PostID}}">
+                    <input type="hidden" name="comm_id" value="{{.ID}}">
+                    <input type="hidden" name="vote" value="l">
+                    <button type="submit" class = "blike">Like:{{.Likes}}</button>
+                </form>
+                <form action="/comment/vote" method="post">
+                    <input type="hidden" name="return_path" value="/post?id={{.PostID}}">
+                    <input type="hidden" name="comm_id" value="{{.ID}}">
+                    <input type="hidden" name="vote" value="d">
+                    <button type="submit" class = "blike">Dislike:{{.Dislikes}}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{end}}
+    
+    
+</main>
+</body>
+</html>

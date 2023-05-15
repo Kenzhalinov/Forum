@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Forum</title>
+</head>
+<body>
+    <header>
+        <div class="header-conteiner">
+            <h2 class="home-header"><a href='/'>Home</a></h2>
+            <div class="nav-conteiner">
+            <nav class="main-nav">
+                <a href='/signin'>Sign-in</a>
+                <a href='/signup'>Sign-up</a>
+                <form id="logout-form" action="/logout" method="POST">
+                </form>
+                <a href="#" onclick="document.getElementById('logout-form').submit()">Log-Out</a>
+                <a href='/post/create'>Create-post</a>
+            </nav>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="main-conteiner">
+        <nav class="category">
+           
+          <form class="category-form" action="/" method="get">
+            <input type="hidden" name="category" value="Anime">
+            <button type="submit" class="button-container">Anime</button>
+          </form>
+          <form class="category-form" action="/" method="get">
+            <input type="hidden" name="category" value="Manga">
+            <button type="submit" class="button-container">Manga</button>
+          </form>
+          <form class="category-form" action="/" method="get">
+            <input type="hidden" name="category" value="Games">
+            <button type="submit" class="button-container">Games</button>
+          </form>
+          <form class="category-form" action="/" method="get">
+            <input type="hidden" name="category" value="Gachi">
+            <button type="submit" class="button-container">Gachi</button>
+        </form>
+        <button class="button-container"><a href="/post/liked">Likes</a></button>
+        <button class="button-container"><a href="/post/users">Created</a></button>
+        </nav>
+      </div>
+    <h2>Posts</h2>
+    {{if .}}
+    {{range .}}
+    <div class="Posts">
+            <div class="post-content">
+                <div class="content">
+                    <p><i>Author:</i> {{.User}}</p>
+                    <h3><a href='/post?id={{.ID}}'>{{.Title}}</a></h3>
+                    <p>{{.Content}}</p>
+                </div>
+                <div class="cont-like">
+                <form action="/post/vote" method="post">
+                    <input type="hidden" name="return_path" value="/">
+                    <input type="hidden" name="post_id" value="{{.ID}}">
+                    <input type="hidden" name="vote" value="l">
+                    <button type="submit" class = "blike">Like:{{.Likes}}</button>
+                </form>
+                <form action="/post/vote" method="post">
+                    <input type="hidden" name="return_path" value="/">
+                    <input type="hidden" name="post_id" value="{{.ID}}">
+                    <input type="hidden" name="vote" value="d">
+                    <button type="submit" class = "blike">Dislike:{{.Dislikes}}</button>
+                </form>
+            </div>
+            </div>
+        </div>
+        {{end}}
+        {{end}}
+    </main>
+<footer>
+<p><a href="/">created:Maksat2003 & Orochi</a></p>
+</footer>
+</body>
+</html>

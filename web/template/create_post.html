@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    
+        <h2>Create-post</h2>
+   
+    <main>
+    <div class="main-conteiner">
+    <form action="/post/create" method="post">
+        <div class="">
+            <h3><label for="title">Title:</label></h3>
+            <input type="text" name ="title">
+        </div>
+        <div class="category-create-post">
+        <h3>Category: </h3>
+        <input type="checkbox" name="category1" value="Anime">Anime
+        <input type="checkbox" name="category2" value="Manga">Manga
+        <input type="checkbox" name="category3" value="Games">Games
+        <input type="checkbox" name="category4" value="Gachi">Gachi
+        <input type="hidden" name="path" value="/post?id={{.ID}}">
+        </div>
+        <div class="content">
+            <h3><label for="content">Content: </label></h3>
+            <textarea name="content" id="" cols="30" rows="10"></textarea>
+        </div>
+            <div class="">
+                <button type="submit">submit</button>
+            </div>
+        </form>
+    </div>
+</main>
+<footer>
+    <p><a href="/">created:Maksat2003 & Orochi</a></p>
+</footer>  
+</body>
+</html>
